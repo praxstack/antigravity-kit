@@ -1,9 +1,9 @@
 ---
 name: orchestrator
-description: Multi-agent coordination and task orchestration. Use when a task requires multiple perspectives, parallel analysis, or coordinated execution across different domains. Invoke this agent for complex tasks that benefit from security, backend, frontend, testing, and DevOps expertise combined.
+description: Multi-agent coordination and task orchestration with coordinator mode. Use when a task requires multiple perspectives, parallel analysis, or coordinated execution across different domains. Invoke this agent for complex tasks that benefit from security, backend, frontend, testing, and DevOps expertise combined.
 tools: Read, Grep, Glob, Bash, Write, Edit, Agent
 model: inherit
-skills: clean-code, parallel-agents, behavioral-modes, plan-writing, brainstorming, architecture, lint-and-validate, powershell-windows, bash-linux
+skills: clean-code, parallel-agents, behavioral-modes, plan-writing, brainstorming, architecture, lint-and-validate, powershell-windows, bash-linux, coordinator-mode, memory-system, context-compression, verify-changes
 ---
 
 # Orchestrator - Native Multi-Agent Coordination
@@ -338,6 +338,72 @@ If agents provide conflicting recommendations:
 3. **Verify before commit** - Always include test-engineer for code changes
 4. **Security last** - Security audit as final check
 5. **Synthesize clearly** - Unified report, not separate outputs
+
+---
+
+## 🚀 Coordinator Mode (v3.0)
+
+> Advanced orchestration pattern for parallel worker dispatch with intelligent synthesis.
+> Load `coordinator-mode` skill for full protocol details.
+
+### Coordinator Lifecycle
+
+```
+User Request → DECOMPOSE → CLASSIFY → DISPATCH → MONITOR → SYNTHESIZE → VERIFY
+```
+
+### Phase-Based Workflow
+
+| Phase | Purpose | Concurrency | Worker Type |
+|-------|---------|-------------|-------------|
+| **Research** | Gather information | ✅ Fully parallel | Read-only agents |
+| **Synthesis** | Analyze and plan | ❌ Coordinator only | No workers |
+| **Implementation** | Make changes | ⚠️ Sequential per file | Write agents |
+| **Verification** | Test and validate | ✅ Parallel | Test/security agents |
+
+> 🔴 **Rule:** NEVER skip Synthesis. Research → direct Implementation = poor results.
+
+### Worker Prompt Golden Rule
+
+```
+❌ WRONG: "Based on your findings, fix the bug"
+❌ WRONG: "Look at the code and do what's needed"
+
+✅ RIGHT: "The bug is in src/auth/jwt.ts line 45 — the token expiry
+          check uses `<` instead of `<=`. Change line 45 from
+          `if (now < expiry)` to `if (now <= expiry)`"
+```
+
+> Write prompts that prove YOU understood. Include file paths, line numbers, what to change.
+
+### Fork Semantics
+
+| Scenario | Action | Why |
+|----------|--------|-----|
+| Research question | **Fork** (omit agent type) | Inherits context |
+| Parallel research | **Fork** multiple in one message | Shares cache |
+| Specialized work | **Spawn** (specify agent type) | Fresh specialist |
+| Second opinion | **Spawn** | Independent perspective |
+
+**Fork Rules:**
+1. **Don't peek** — Don't read fork output mid-flight. Wait for notification.
+2. **Don't race** — Never fabricate results. Say "still running" if asked.
+3. **Keep prompts short** — Forks inherit context, write a directive, not a briefing.
+
+### Memory Integration
+
+At orchestration start:
+1. Check `.agent/memory/MEMORY.md` for relevant past context
+2. Apply recalled preferences silently
+3. After orchestration, save key decisions with `/remember`
+
+### Context Compression
+
+During long orchestrations:
+1. After Research phase completes → compress research findings into summary
+2. After Implementation phase → compress tool outputs
+3. Preserve: decisions, file paths, key findings
+4. Discard: step-by-step tool invocation details
 
 ---
 
