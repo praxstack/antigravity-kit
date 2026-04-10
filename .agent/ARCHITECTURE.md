@@ -9,7 +9,7 @@
 Antigravity Kit is a modular system consisting of:
 
 - **20 Specialist Agents** - Role-based AI personas (1 major upgrade in v3.0)
-- **44 Skills** - Domain-specific knowledge modules with conditional loading
+- **45 Skills** - Domain-specific knowledge modules with conditional loading
 - **14 Workflows** - Slash command procedures
 
 ---
@@ -20,7 +20,7 @@ Antigravity Kit is a modular system consisting of:
 .agent/
 ├── ARCHITECTURE.md          # This file
 ├── agents/                  # 20 Specialist Agents
-├── skills/                  # 44 Skills (with conditional loading)
+├── skills/                  # 45 Skills (with conditional loading)
 ├── workflows/               # 14 Slash Commands
 ├── rules/                   # Global Rules
 ├── memory/                  # Persistent Memory (v3.0)
@@ -58,7 +58,7 @@ Specialist AI personas for different domains.
 
 ---
 
-## 🧩 Skills (44)
+## 🧩 Skills (45)
 
 Modular knowledge domains that agents can load on-demand based on task context. Each skill has a `when_to_use` frontmatter field for conditional/intelligent loading.
 
@@ -165,6 +165,7 @@ Modular knowledge domains that agents can load on-demand based on task context. 
 | `batch-operations`        | Multi-file pattern-based modifications                      |
 | `simplify-code`           | Reduce over-engineered complexity                           |
 | `skillify`                | Auto-create skills from repetitive workflows                |
+| `code-review-graph`       | Token-efficient code review via Tree-sitter AST + MCP       |
 
 ### Other
 
@@ -292,7 +293,7 @@ For details, see [scripts/README.md](scripts/README.md)
 | Metric              | Value                             |
 | ------------------- | --------------------------------- |
 | **Total Agents**    | 20 (1 major upgrade in v3.0)      |
-| **Total Skills**    | 44 (+7 new in v3.0)               |
+| **Total Skills**    | 45 (+8 new in v3.0)               |
 | **Total Workflows** | 14 (+3 new in v3.0)               |
 | **Total Scripts**   | 2 (master) + 18 (skill-level)     |
 | **Coverage**        | ~95% web/mobile + orchestration   |

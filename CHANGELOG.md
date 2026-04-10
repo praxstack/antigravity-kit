@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- **Code Review Graph Skill**: New skill for token-efficient code review using Tree-sitter AST graphs and MCP blast radius analysis. Reduces AI token usage by 6.8–49x on large codebases. Includes installation guide, workflow documentation, and alternatives comparison.
+
 ## [3.0.0] - 2026-04-01
 
 ### Added

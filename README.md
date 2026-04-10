@@ -44,7 +44,7 @@ Antigravity Kit v3.0 introduces **7 new skills**, **3 new workflows**, and a **m
 - **Larger `.agent/` folder**: ~40KB additional markdown files
 - **MEMORY.md overhead**: ~1,000 tokens per session (but saves 3,000-10,000 by eliminating re-discovery)
 - **Coordinator complexity**: Advanced orchestration patterns have a learning curve
-- **Frontmatter audit**: All 44 skills now have `when_to_use` — needs periodic review
+- **Frontmatter audit**: All 45 skills now have `when_to_use` — needs periodic review
 - **Agent tool required**: Coordinator patterns need model with agent/subagent tool support
 
 ### 🔄 Migration from v2
@@ -71,6 +71,22 @@ ag-kit init
 
 This installs the `.agent` folder containing all templates into your project.
 
+### 🌍 Global / Shared Setup (Avoid Copying)
+
+If you use Antigravity Kit across many projects and don't want to copy-paste the `.agent/` folder into every single one, you can use **Symbolic Links (Symlinks)** to reference a single global `.agent` folder.
+
+1. Install it somewhere globally, e.g., `~/.ag-kit/`
+   ```bash
+   mkdir ~/.ag-kit && cd ~/.ag-kit
+   ag-kit init
+   ```
+2. Symlink it into your local projects:
+   - **Mac/Linux:** `ln -s ~/.ag-kit/.agent .agent`
+   - **Windows (Command Prompt as Admin):** `mklink /D .agent C:\Users\YourUser\.ag-kit\.agent`
+   - **Windows (PowerShell as Admin):** `New-Item -ItemType SymbolicLink -Path ".agent" -Target "C:\Users\YourUser\.ag-kit\.agent"`
+
+This way, updating your global `.agent` folder instantly applies the updates to all your projects.
+
 ### ⚠️ Important Note on `.gitignore`
 If you are using AI-powered editors like **Cursor** or **Windsurf**, adding the `.agent/` folder to your `.gitignore` may prevent the IDE from indexing the workflows. This results in slash commands (like `/plan`, `/debug`) not appearing in the chat suggestion dropdown.
 
@@ -79,12 +95,34 @@ To keep the `.agent/` folder local (not tracked by Git) while maintaining AI fun
 1. Ensure `.agent/` is **NOT** in your project's `.gitignore`.
 2. Instead, add it to your local exclude file: `.git/info/exclude`
 
+### 🌍 Global Usage (Avoid Copy-Pasting)
+
+If you work on many projects and don't want to duplicate the `.agent` folder for each one, you can keep a single `.agent` folder somewhere on your system and use **Symlinks** (Symbolic Links). This lets you update the kit in one place, and all your projects will automatically use the latest version.
+
+**1. Create a central folder:**
+Install the Kit to a common location (e.g., `~/global-tools/.agent` or `C:\tools\.agent`).
+
+**2. Link it to your project:**
+Navigate to your project directory in the terminal and run:
+
+**Windows (Command Prompt as Admin):**
+```cmd
+mklink /D .agent "C:\path\to\global\.agent"
+```
+
+**macOS / Linux:**
+```bash
+ln -s /path/to/global/.agent .agent
+```
+
+This creates a lightweight folder shortcut. Your IDE and AI assistants will treat it as if the `.agent` folder is right inside your project!
+
 ## What's Included
 
 | Component     | Count | Description                                                        |
 | ------------- | ----- | ------------------------------------------------------------------ |
 | **Agents**    | 20    | Specialist AI personas (frontend, backend, security, PM, QA, etc.) |
-| **Skills**    | 44    | Domain-specific knowledge modules with conditional loading         |
+| **Skills**    | 45    | Domain-specific knowledge modules with conditional loading         |
 | **Workflows** | 14    | Slash command procedures                                           |
 | **Modern ES** | 2026+ | **Next.js 16 & React 19 Native** (Cache Components, PPR, Proxy)   |
 
@@ -99,9 +137,22 @@ To keep the `.agent/` folder local (not tracked by Git) while maintaining AI fun
 | **Skill** | `batch-operations` | Multi-file batch modifications |
 | **Skill** | `simplify-code` | Reduce over-engineered complexity |
 | **Skill** | `skillify` | Auto-create skills from repetitive workflows |
+| **Skill** | `code-review-graph` | Token-efficient code review via Tree-sitter AST graphs + MCP (6.8–49x savings) |
 | **Workflow** | `/coordinate` | Advanced multi-agent coordination |
 | **Workflow** | `/remember` | Save to persistent memory |
 | **Workflow** | `/verify` | Verify code through execution |
+
+#### 📊 49x Token Optimization Details (Code-Review-Graph)
+The `code-review-graph` skill automates blast-radius mapping for your codebase (via Tree-sitter & SQLite). 
+If it is installed globally via Pip/Pipx, Antigravity Agents will now intelligently auto-query it, dropping token usage massively on large projects:
+
+| Codebase Type | Scenario Tested | Token Cost (Standard) | Token Cost (With Graph) | Token Savings | Impact & Outcome |
+|---|---|---|---|---|---|
+| **Large API** (FastAPI) | Modified 1 endpoint | 138,585 tokens | 37,217 tokens | **3.7x fewer** | Reads only affected endpoints instead of all middleware. |
+| **Mid-level Lib** (httpx) | Breaking change | 64,666 tokens | 14,090 tokens | **4.6x fewer** | Successfully skips disconnected source files. |
+| **Massive Monorepo** | Cross-package update | 739,352 tokens | 15,049 tokens | **49.1x fewer** | Excludes exactly ~26,500 unrelated files instantly. |
+
+*(Note: The integration automatically ignores parsing small projects under 200 files since naive file-reading is cheaper at that size).*
 
 ## Usage
 
@@ -111,13 +162,13 @@ To keep the `.agent/` folder local (not tracked by Git) while maintaining AI fun
 
 ```
 You: "Add JWT authentication"
-AI: 🤖 Applying @security-auditor + @backend-specialist...
+Agent: Applying @security-auditor + @backend-specialist...
 
 You: "Fix the dark mode button"
-AI: 🤖 Using @frontend-specialist...
+Agent: Using @frontend-specialist...
 
 You: "Login returns 500 error"
-AI: 🤖 Using @debugger for systematic analysis...
+Agent: Using @debugger for systematic analysis...
 ```
 
 **How it works:**
@@ -167,7 +218,7 @@ Example:
 
 ### Using Skills
 
-Skills are loaded automatically based on task context. Each skill has a `when_to_use` field that helps the AI determine relevance — loading only what's needed instead of browsing all 44 skills.
+Skills are loaded automatically based on task context. Each skill has a `when_to_use` field that helps the AI determine relevance — loading only what's needed instead of browsing all 45 skills.
 
 ### Using Memory
 
