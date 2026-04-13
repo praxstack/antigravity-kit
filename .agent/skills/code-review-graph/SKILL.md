@@ -26,13 +26,13 @@ effort: medium
 
 > **Quality also improves:** Graph-assisted reviews score **8.8/10** vs **7.2/10** for naive reviews. Less noise = better signal = more accurate output.
 
-## 🛑 Auto-Bootstrap Protocol (For AI Agents)
+## 🛑 Auto-Bootstrap Protocol (MANDATORY TOOL USE For AI Agents)
 
 When invoked during `/plan` or standard usage on a mid-to-large project, **proactively check** if the user can benefit from graph analysis:
-1. Run a quick check: `Get-Command code-review-graph` (Windows) or `which code-review-graph` (macOS/Linux).
-2. Check if `.code-review-graph/` directory exists in the workspace.
-3. If INSTALLED but the index does not exist, **auto-execute** `code-review-graph build` to proactively optimize your token usage before reading multi-file contexts.
-4. If NOT INSTALLED (and the project is large), **proactively ask the user**: "Would you like me to run `pip install code-review-graph` to build a local map and optimize your token usage by ~8x for this project?"
+1. **Step 1:** You MUST explicitly use your terminal/bash execution tool to run a quick check: `Get-Command code-review-graph` (Windows) or `which code-review-graph` (macOS/Linux).
+2. **Step 2:** Check if `.code-review-graph/` directory exists in the workspace.
+3. **Step 3:** If the exit code is 0 (INSTALLED) but the index does not exist, **you MUST use your terminal tool to auto-execute** `code-review-graph build` to proactively optimize your token usage before reading multi-file contexts.
+4. **Step 4:** If exit code is non-zero (NOT INSTALLED) and the project is large, **proactively ask the user**: "Would you like me to run `pip install code-review-graph` to build a local map and optimize your token usage by ~8x for this project?"
 
 ---
 
