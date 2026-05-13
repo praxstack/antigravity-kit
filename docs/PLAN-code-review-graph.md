@@ -1,6 +1,6 @@
 # PLAN: Code Review Graph Skill Integration
 
-> **Objective:** Create a new Antigravity Kit skill for `code-review-graph` — the Tree-sitter + SQLite MCP tool that reduces AI coding assistant token usage by 6.8–49x.
+> **Objective:** Create a new AG Kit skill for `code-review-graph` — the Tree-sitter + SQLite MCP tool that reduces AI coding assistant token usage by 6.8-49x.
 
 ---
 
@@ -12,7 +12,7 @@ Source: [How code-review-graph Cuts Claude Code Token Usage by 49x](https://dev.
 - Uses **Tree-sitter** to parse codebases into ASTs (19 languages)
 - Stores relationships in a **SQLite graph** (functions, classes, imports, tests)
 - Traces **blast radius** of changes via breadth-first search
-- Serves context via **MCP** to AI coding tools (already supports Antigravity)
+- Serves context via **MCP** to AI coding tools that support MCP integrations
 - Reduces token usage by **6.8x average**, up to **49x** on large monorepos
 - Improves review quality from **7.2 → 8.8/10** (more signal, less noise)
 
@@ -26,7 +26,7 @@ New dedicated skill covering:
 - **When to use** (500+ file codebases, multi-file changes, cross-module deps)
 - **When to skip** (under 200 files, single-file changes, dynamic patterns)
 - **Installation** (pipx, uvx, pip options)
-- **MCP configuration** for Antigravity / Cursor / Windsurf
+- **MCP configuration** for AG Kit, Cursor, and Windsurf
 - **Graph build & watch mode**
 - **Blast radius analysis** — the core token-saving feature
 - **Dead code detection** workflow
