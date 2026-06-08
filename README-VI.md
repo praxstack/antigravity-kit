@@ -146,9 +146,10 @@ AG Kit là sản phẩm nghiên cứu và phát triển độc lập trong lĩnh
 
 Nếu AG Kit giúp cho tiến trình lập trình với AI của bạn hiệu quả và năng suất hơn, hãy ủng hộ nhà phát triển:
 
-| ☕ Ủng hộ & Quyên góp | 🚀 Đồng AGKIT Memecoin |
-| :---: | :---: |
-| <a href="https://buymeacoffee.com/vudovn" target="_blank"><img src="https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me a Coffee" /></a><br/><br/>**Ngân hàng Việt Nam (MBBank QR):**<br/><img src="https://img.vietqr.io/image/mbbank-0779440918-compact.jpg" alt="Donate QR" width="140" style="border-radius: 8px; margin-top: 10px;" /> | **Địa chỉ Hợp đồng BASE (CA):**<br/><br/>`0x1b145dbee7c63394b512a2f7b76181c94a314ba3`<br/>|
+<a href="https://buymeacoffee.com/vudovn" target="_blank"><img src="https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me a Coffee" /></a>
+
+**Ngân hàng Việt Nam (MBBank QR):**<br/>
+<img src="https://img.vietqr.io/image/mbbank-0779440918-compact.jpg" alt="Donate QR" width="140" style="border-radius: 8px; margin-top: 10px;" />
 
 ---
 

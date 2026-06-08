@@ -81,7 +81,7 @@ No unreleased changes.
 ### Changed
 - **Folder Structure Normalization**: Successfully migrated the workspace from `.agent` to `.agents` folder naming across all documentation, architecture guides, and CLI configurations.
 - **Singular Agent Directory**: Renamed the specialist agents directory inside `.agents` from `agents/` to `agent/` to maintain clean singular naming conventions.
-- **Polished README Layouts**: Refactored `README.md` and `web/README.md` to remove old comparison tables, convert relative branding assets to absolute URLs, and reorganize the support section into a beautiful, compact side-by-side grid showing donations (MBBank QR) and the Solana CA of the official project memecoin.
+- **Polished README Layouts**: Refactored `README.md` and `web/README.md` to remove old comparison tables, convert relative branding assets to absolute URLs, and reorganize the support section (Buy Me a Coffee + MBBank QR donations).
 - **Website Documentation Sync**: Refactored Next.js documentation pages (`installation/page.tsx`, `cli/page.tsx`, and `workflows/page.tsx`) to align with the new `.agents/agent/` folder paths, 20 agents, 45 skills, and 13 workflows.
 
 ### Fixed
