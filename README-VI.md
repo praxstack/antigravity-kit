@@ -153,6 +153,9 @@ Nếu AG Kit giúp cho tiến trình lập trình với AI của bạn hiệu qu
 
 ---
 
+CA: Gjpatn3d24dCRhUng7F37K6xJba4R8SDBC18xs1Apump
+
+
 ## 📄 Giấy phép
 
 Được phát hành dưới [Giấy phép MIT](LICENSE) © [Vudovn](https://github.com/vudovn).

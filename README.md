@@ -153,6 +153,8 @@ If AG Kit has made your AI programming sessions more productive, consider suppor
 
 ---
 
+CA: Gjpatn3d24dCRhUng7F37K6xJba4R8SDBC18xs1Apump
+
 ## 📄 License
 
 Released under the [MIT License](LICENSE) © [Vudovn](https://github.com/vudovn).
