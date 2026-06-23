@@ -67,7 +67,7 @@ Nếu bạn làm việc trên nhiều dự án khác nhau và muốn tránh sao 
 
 ## ⚠️ Lưu ý Quan trọng về `.gitignore`
 
-Nếu bạn đang sử dụng các trình soạn thảo mã nguồn tích hợp sẵn AI (như **Cursor** hoặc **Windsurf**), việc thêm thư mục `.agents/` vào file `.gitignore` sẽ khiến trình phân tích ngôn ngữ của trình soạn thảo không thể lập chỉ mục (index) các workflow. Điều này sẽ làm mất tính năng gợi ý tự động (autocomplete) cho các lệnh slash (ví dụ: `/plan`, `/debug`).
+Nếu bạn đang sử dụng các trình soạn thảo mã nguồn tích hợp sẵn AI (như **Antigravity**), việc thêm thư mục `.agents/` vào file `.gitignore` sẽ khiến trình phân tích ngôn ngữ của trình soạn thảo không thể lập chỉ mục (index) các workflow. Điều này sẽ làm mất tính năng gợi ý tự động (autocomplete) cho các lệnh slash (ví dụ: `/plan`, `/debug`).
 
 ### Giải pháp tối ưu:
 Để thư mục `.agents/` vừa không bị đẩy lên Git remote, vừa giữ nguyên khả năng hỗ trợ đắc lực từ AI editor:

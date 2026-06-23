@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 
-const X_URL = 'https://x.com/antigravitykit';
+const X_URL = 'https://x.com/vudovn354';
 const SEEN_KEY = 'ag-kit-follow-x-dismissed';
 
 const XIcon = ({ className }: { className?: string }) => (
@@ -62,7 +62,7 @@ export default function FollowDialog() {
                             <XIcon className="w-5 h-5 text-white dark:text-zinc-900" />
                         </div>
                         <div className="flex-1">
-                            <div className="font-semibold text-zinc-900 dark:text-zinc-50 mb-0.5">@antigravitykit</div>
+                            <div className="font-semibold text-zinc-900 dark:text-zinc-50 mb-0.5">@vudovn354</div>
                             <div className="text-sm text-zinc-600 dark:text-zinc-400">Follow on X (Twitter)</div>
                         </div>
                         <svg className="w-5 h-5 text-zinc-400 group-hover:text-zinc-600 dark:group-hover:text-zinc-300 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">

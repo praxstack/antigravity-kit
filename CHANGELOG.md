@@ -9,6 +9,16 @@ Starting with `2026.5.13`, this project uses calendar versioning in `YYYY.M.D` f
 
 No unreleased changes.
 
+## [2026.6.23] - 2026-06-23
+
+> Rules modularization, README cleanup, and version bump.
+
+### Changed
+- **Modular rules architecture**: Split the monolithic `GEMINI.md` rules file into 6 focused, single-responsibility files: `core-protocol.md`, `request-routing.md`, `universal-rules.md`, `code-rules.md`, `design-rules.md`, and `quick-reference.md`. Enables conditional loading — only relevant rules are activated per request context.
+
+### Removed
+- **`GEMINI.md`**: Replaced by the 6 modular rule files above.
+
 ## [2026.6.7] - 2026-06-07
 
 > Documentation website overhaul: a redesigned MDX rendering system, full multi-language support (English, Tiếng Việt, 中文, 日本語), a working table of contents, and a new in-site changelog page. This release touches only the `web/` docs site.
@@ -184,9 +194,13 @@ No unreleased changes.
 - CLI tool for easy installation and updates.
 - Comprehensive documentation and architecture guide.
 
-[Unreleased]: https://github.com/vudovn/ag-kit/compare/2026.5.25...HEAD
-[2026.5.25]: https://github.com/vudovn/ag-kit/compare/2026.5.13...2026.5.25
-[2026.5.13]: https://github.com/vudovn/ag-kit/compare/v3.0.0...2026.5.13
+[Unreleased]: https://github.com/vudovn/ag-kit/compare/v2026.6.23...HEAD
+[2026.6.23]: https://github.com/vudovn/ag-kit/compare/v2026.6.7...v2026.6.23
+[2026.6.7]: https://github.com/vudovn/ag-kit/compare/v2026.6.2...v2026.6.7
+[2026.6.2]: https://github.com/vudovn/ag-kit/compare/v2026.5.31...v2026.6.2
+[2026.5.31]: https://github.com/vudovn/ag-kit/compare/v2026.5.25...v2026.5.31
+[2026.5.25]: https://github.com/vudovn/ag-kit/compare/v2026.5.13...v2026.5.25
+[2026.5.13]: https://github.com/vudovn/ag-kit/compare/v3.0.0...v2026.5.13
 [3.0.0]: https://github.com/vudovn/ag-kit/compare/v2.0.2...v3.0.0
 [2.0.2]: https://github.com/vudovn/ag-kit/compare/v2.0.1...v2.0.2
 [2.0.1]: https://github.com/vudovn/ag-kit/compare/v2.0.0...v2.0.1

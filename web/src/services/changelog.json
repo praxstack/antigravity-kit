@@ -1,5 +1,18 @@
 [
     {
+        "version": "2026.6.23",
+        "date": "2026-06-23",
+        "summary": "Rules modularization: split GEMINI.md into 6 focused rule files with conditional loading. Also cleaned up README support sections.",
+        "changes": {
+            "Changed": [
+                "Modular rules architecture: split the monolithic GEMINI.md into 6 focused files (core-protocol, request-routing, universal-rules, code-rules, design-rules, quick-reference) with conditional loading."
+            ],
+            "Removed": [
+                "GEMINI.md: replaced by the 6 modular rule files."
+            ]
+        }
+    },
+    {
         "version": "2026.6.7",
         "date": "2026-06-07",
         "summary": "Documentation website overhaul: a redesigned MDX rendering system, full multi-language support (English, Tiếng Việt, 中文, 日本語), a working table of contents, and a new in-site changelog page.",
