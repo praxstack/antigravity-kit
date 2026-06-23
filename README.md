@@ -67,7 +67,7 @@ If you work across multiple repositories and want to avoid duplicating the `.age
 
 ## ⚠️ Important Note on `.gitignore`
 
-If you are using AI-native code editors (like **Cursor** or **Windsurf**), adding the `.agents/` directory to `.gitignore` will prevent the editor's language server from indexing the workflows, which disables autocomplete for slash commands (e.g. `/plan`, `/debug`).
+If you are using AI-native code editors (like **Antigravity**), adding the `.agents/` directory to `.gitignore` will prevent the editor's language server from indexing the workflows, which disables autocomplete for slash commands (e.g. `/plan`, `/debug`).
 
 ### Recommended Solution:
 To keep `.agents/` out of your remote repository without losing editor integration:

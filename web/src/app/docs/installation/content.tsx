@@ -100,7 +100,7 @@ export default function InstallationContent() {
           <div className="p-4 rounded-lg border border-zinc-200 dark:border-zinc-800">
             <h3 className="font-semibold text-zinc-900 dark:text-zinc-50 mb-2">rules/</h3>
             <p className="text-sm text-zinc-600 dark:text-zinc-400">
-              {t.installPage.rulesDirDescA}<code className="px-1 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 font-mono text-xs">GEMINI.md</code>{t.installPage.rulesDirDescB}
+              {t.installPage.rulesDirDescA}<code className="px-1 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 font-mono text-xs">rules/*.md</code>{t.installPage.rulesDirDescB}
             </p>
           </div>
         </div>
